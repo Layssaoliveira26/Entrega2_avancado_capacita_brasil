@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh; /*ou seja, ocupa 100% da altura da tela*/
+  width: 100vw; /*ocupa 100% da largura da tela*/
+  background: #0f0c29; 
+  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  font-family:'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 50%;
+  width: 400px;
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: #0a0a1142;
+  align-items: center;
+}
+
+form .dados {
+  text-align: center;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 28px;
+}
+
+input {
+  width: 98%;
+  padding:8px;
+  border: 1px solid #48456C;
+  border-radius: 30px;
+  height: 40px;
+  background-color: #2d2d49;
+  color: #fff;
+  font-size: 16px;
+  padding-left: 12px;
+  outline: none; /*bordinha que fica quando se clica no input*/
+}
+
+button {
+  border-radius: 30px;
+  background-color: #8B8AE1;
+  border: none;
+  height: 40px;
+  font-weight: bold;
+  width: 150px;
+  text-align: center;
+  color: #FFF;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+

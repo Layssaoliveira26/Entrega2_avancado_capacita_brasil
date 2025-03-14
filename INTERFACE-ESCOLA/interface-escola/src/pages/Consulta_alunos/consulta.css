@@ -1,0 +1,67 @@
+
+.container_consulta {
+    width: 100%;
+    display: flex;
+    padding-top: 100px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.list {
+    color: #FFF;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.card {
+    display: flex;
+    max-width: 1000px;
+    width: 95%;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #0a0a1142;
+    margin: 2px;
+    border-radius: 10px;
+}
+
+.card > div {
+    display: flex; /* Transforma o contêiner interno em um flexbox */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    width: 100%; /* Ocupa toda a largura do .card */
+}
+
+.label {
+    text-align: left;
+    width: 250px;
+}
+
+p {
+    color: #FFF;
+    font-weight: bold;
+
+    & span {
+        font-weight: normal;
+    }
+}
+
+.btn_trash img {
+    width: 16px;
+    height: 16px;
+}
+
+.btn_trash {
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.btn_trash:hover {
+    background-color: #FFF;
+}
+
