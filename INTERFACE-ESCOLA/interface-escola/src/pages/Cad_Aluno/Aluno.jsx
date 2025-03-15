@@ -6,12 +6,22 @@ import api from '../../services/api'
 function Aluno () {
     const inputNome = useRef()
 
-    async function createAluno() {
+    async function createAluno(event) {
+        event.preventDefault()
+
+        const nomeAluno = inputNome.current.value
+
         try {
-            await api.post('/alunos', {
-                nome: inputNome.current.value
+            const response = await api.post('/alunos', {
+                nome: nomeAluno
             })
-        alert('Aluno(a) cadastrado(a) com sucesso!')
+            
+            console.log('Aluno(a) cadastrado(a)')
+        
+            if(response.data) {
+                alert('Aluno(a) cadastrado(a) com sucesso!')
+                inputNome.current.value = ""
+            }
         } catch(error) {
             console.error('Erro ao cadastrar o aluno', error)
             alert('Erro ao cadastrar o aluno')
@@ -29,4 +39,4 @@ function Aluno () {
     )
 }
 
-export default Aluno
+export default Aluno;

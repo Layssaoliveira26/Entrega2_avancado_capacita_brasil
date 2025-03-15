@@ -11,6 +11,11 @@ function Consulta_professores() {
         setProfessores(professoresFromApi.data)
     }
 
+    async function deleteProfessor(id) {
+        await api.delete(`/professores/${id}`)
+        getProfessores()
+    }
+
     //a ideia do useEffect nesse caso é carregar os professores assim que a 
     // página for carregada
     useEffect(()=> {
@@ -24,7 +29,9 @@ function Consulta_professores() {
                             <div>
                                 <p className='label'>Nome: <span>{professor.nome} </span></p>
                                 <p className='label'>Disciplina: <span>{professor.disciplina.nome} </span></p>
-                                <button className='btn_trash'>
+                                <button className='btn_trash' onClick= {() => {
+                                    deleteProfessor(professor.id)
+                                }}>
                                     <img src= {Trash} alt='ícone de lixeira' />
                                 </button>
                             </div>

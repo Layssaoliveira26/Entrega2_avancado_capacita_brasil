@@ -12,6 +12,11 @@ function Consulta_boletins() {
         
     }
 
+    async function deleteBoletins(id) {
+        await api.delete(`/boletins/${id}`)
+        getBoletins()
+    }
+
     useEffect(() => {
         getBoletins()
     }, [])
@@ -26,7 +31,9 @@ function Consulta_boletins() {
                         <p className='label'>Aluno(a): <span>{boletim.aluno.nome} </span> </p>
                         <p className='label'>Disciplina: <span>{boletim.disciplina.nome} </span> </p>
                         <p className='label'>Nota: <span>{boletim.nota} </span> </p>
-                        <button className='btn_trash'>
+                        <button className='btn_trash' onClick={() => {
+                            deleteBoletins(boletim.id)
+                        }}>
                             <img src={Trash} alt='ícone de lixeira' />
                         </button>
                     </div>

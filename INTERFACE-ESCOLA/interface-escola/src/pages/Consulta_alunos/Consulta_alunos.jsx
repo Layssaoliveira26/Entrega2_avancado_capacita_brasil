@@ -12,11 +12,8 @@ function Consulta_alunos() {
     }
 
     async function deleteAlunos(id) {
-        await api.delete({
-            where: {
-                id: id // Passa o ID do aluno a ser excluído
-            }
-        })
+        await api.delete(`/alunos/${id}`)
+        getAlunos()
     }
 
     useEffect(() => {
@@ -30,7 +27,9 @@ function Consulta_alunos() {
                 <div key={aluno.id} className='card'>
                     <div>
                         <p className='label'>Nome: <span>{aluno.nome} </span></p>
-                        <button className='btn_trash' onClick={deleteAlunos}>
+                        <button className='btn_trash' onClick={() => {
+                            deleteAlunos(aluno.id)
+                        }}>
                             <img src= {Trash} alt='ícone de lixeira' />
                         </button>
                     </div>
