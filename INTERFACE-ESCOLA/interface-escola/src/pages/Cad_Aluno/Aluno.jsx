@@ -29,7 +29,7 @@ function Aluno () {
     }
     return (
         <div className='container'>
-            <Link to='/Consulta_alunos' className='link_boletim'>Deseja acessar seu boletim?</Link>
+            <Link to='/Consulta_boletim_id' className='link_boletim'>Deseja acessar seu boletim?</Link>
             <form>
                 <h1>Deseja se cadastrar como aluno(a)?</h1>
                 <input type="text" ref={inputNome} name="nome" className='input' placeholder="Nome"/>
