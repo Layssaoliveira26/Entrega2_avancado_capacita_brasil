@@ -134,13 +134,20 @@ app.get('/boletins', async(req, res) => {
 });
 
 
-//criar uma rota para buscar um boletim pelo id
-app.get('/boletins/:id', async(req, res) => {
-    const boletim = await prisma.boletim.findUnique({
-        where: {id: parseInt(req.params.id)},
+//criar uma rota para buscar um boletim pelo id do aluno
+app.get('/boletins/aluno/:alunoId', async(req, res) => {
+    const alunoId = parseInt(req.params.alunoId)
+
+    const boletim = await prisma.boletim.findFirst({
+        where: {alunoId : alunoId},
         include: { aluno: true, disciplina: true}
     });
-    res.status(200).json(boletim);
+    if(boletim) {
+        res.status(200).json(boletim);
+    } else {
+        res.status(404).send('Boletim não encontrado!')
+    }
+    
 });
 
 //criar rota para alterar um boletim por id
